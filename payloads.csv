@@ -1,0 +1,7 @@
+payload,label
+"<script>alert('XSS')</script>",1
+"<img src='x' onerror='alert(1)'>",1
+"<script>console.log('test')</script>",1
+"<b>Bold</b>",0
+"<script>document.write('Hello')</script>",1
+"<div>Safe content</div>",0

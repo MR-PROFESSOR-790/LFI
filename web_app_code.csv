@@ -1,0 +1,77 @@
+code,label
+"var user_input = request.GET['input'];",1
+"response.write(user_input);",1
+"var sanitized_input = sanitize(request.GET['input']);",0
+"response.write(sanitized_input);",0
+"<script>alert('XSS');</script>",1
+"document.write('<div>' + user_input + '</div>');",1
+"var user_input = request.query['name'];",1
+"var safe_input = escape(request.query['name']);",0
+"response.write('<h1>' + user_input + '</h1>');",1
+"response.write('<h1>' + safe_input + '</h1>');",0
+"res.send(user_input);",1
+"res.send(safe_input);",0
+"const input = req.query.input;",1
+"res.end(input);",1
+"const sanitized_input = req.sanitize(req.query.input);",0
+"res.end(sanitized_input);",0
+"var unsafe_input = document.location.hash.substring(1);",1
+"document.body.innerHTML = '<div>' + unsafe_input + '</div>';",1
+"var clean_input = DOMPurify.sanitize(document.location.hash.substring(1));",0
+"document.body.innerHTML = '<div>' + clean_input + '</div>';",0
+"var input = req.body.input;",1
+"res.write(input);",1
+"const sanitized = sanitizeHtml(req.body.input);",0
+"res.write(sanitized);",0
+"var comment = req.query.comment;",1
+"res.send('<p>' + comment + '</p>');",1
+"const safe_comment = sanitize(req.query.comment);",0
+"res.send('<p>' + safe_comment + '</p>');",0
+"var search = req.query.search;",1
+"res.render('search', {query: search});",1
+"const safe_search = sanitize(req.query.search);",0
+"res.render('search', {query: safe_search});",0
+"var username = req.body.username;",1
+"response.end(username);",1
+"const safe_username = sanitize(req.body.username);",0
+"response.end(safe_username);",0
+"var unsafe_var = document.URL;",1
+"document.body.innerHTML = '<a href=\"' + unsafe_var + '\">Link</a>';",1
+"var clean_url = DOMPurify.sanitize(document.URL);",0
+"document.body.innerHTML = '<a href=\"' + clean_url + '\">Link</a>';",0
+"var feedback = req.body.feedback;",1
+"res.write('<textarea>' + feedback + '</textarea>');",1
+"const safe_feedback = sanitize(req.body.feedback);",0
+"res.write('<textarea>' + safe_feedback + '</textarea>');",0
+"var search_input = req.query.search;",1
+"res.send('<div>' + search_input + '</div>');",1
+"const safe_search_input = escape(req.query.search);",0
+"res.send('<div>' + safe_search_input + '</div>');",0
+"var user_data = req.body.data;",1
+"response.write('<b>' + user_data + '</b>');",1
+"const safe_user_data = escape(req.body.data);",0
+"response.write('<b>' + safe_user_data + '</b>');",0
+"var query_param = req.query.param;",1
+"res.send('<span>' + query_param + '</span>');",1
+"const safe_query_param = sanitize(req.query.param);",0
+"res.send('<span>' + safe_query_param + '</span>');",0
+"var unsafe_url = req.query.url;",1
+"res.write('<a href=\"' + unsafe_url + '\">Link</a>');",1
+"const safe_url_param = sanitize(req.query.url);",0
+"res.write('<a href=\"' + safe_url_param + '\">Link</a>');",0
+"var user_comment = req.body.comment;",1
+"response.send('<div>' + user_comment + '</div>');",1
+"const safe_user_comment = sanitize(req.body.comment);",0
+"response.send('<div>' + safe_user_comment + '</div>');",0
+"var user_bio = req.body.bio;",1
+"response.write(user_bio);",1
+"const safe_user_bio = sanitize(req.body.bio);",0
+"response.write(safe_user_bio);",0
+"var message = req.query.message;",1
+"res.send('<div>' + message + '</div>');",1
+"const safe_message = sanitize(req.query.message);",0
+"res.send('<div>' + safe_message + '</div>');",0
+"var product = req.query.product;",1
+"response.end('<p>' + product + '</p>');",1
+"const safe_product = sanitize(req.query.product);",0
+"response.end('<p>' + safe_product + '</p>');",0
